@@ -46,7 +46,7 @@ const About = () => {
 								</div>
 
 								<div className="subtitle about-subtitle">
-									{INFO.about.description}
+									{ INFO.about.description.map((item, index) => (<div>{index + 1}. {item}</div>))}
 								</div>
 							</div>
 

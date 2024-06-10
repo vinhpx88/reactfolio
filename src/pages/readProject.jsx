@@ -8,9 +8,9 @@ import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 
 import INFO from "../data/user";
-import myArticles from "../data/articles";
+import myProjects from "../data/projects";
 
-import "./styles/readArticle.css";
+import "./styles/readProject.css";
 
 let ArticleStyle = styled.div``;
 
@@ -18,57 +18,57 @@ const ReadArticle = () => {
 	const navigate = useNavigate();
 	let { slug } = useParams();
 
-	const article = myArticles[slug - 1];
+	const project = myProjects[slug - 1];
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
-	}, [article]);
+	}, [project]);
 
 	ArticleStyle = styled.div`
-		${article().style}
+		${project().style}
 	`;
 
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`${article().title} | ${INFO.main.title}`}</title>
-				<meta name="description" content={article().description} />
-				<meta name="keywords" content={article().keywords.join(", ")} />
+				<title>{`${project().title} | ${INFO.main.title}`}</title>
+				<meta name="description" content={project().description} />
+				<meta name="keywords" content={project().keywords.join(", ")} />
 			</Helmet>
 
 			<div className="page-content">
 				<NavBar />
 
 				<div className="content-wrapper">
-					<div className="read-article-logo-container">
-						<div className="read-article-logo">
+					<div className="read-project-logo-container">
+						<div className="read-project-logo">
 							<Logo width={46} />
 						</div>
 					</div>
 
-					<div className="read-article-container">
-						<div className="read-article-back">
+					<div className="read-project-container">
+						<div className="read-project-back">
 							<img
 								src="../back-button.png"
 								alt="back"
-								className="read-article-back-button"
+								className="read-project-back-button"
 								onClick={() => navigate(-1)}
 							/>
 						</div>
 
-						<div className="read-article-wrapper">
-							<div className="read-article-date-container">
-								<div className="read-article-date">
-									{article().date}
+						<div className="read-project-wrapper">
+							<div className="read-project-date-container">
+								<div className="read-project-date">
+									{project().date}
 								</div>
 							</div>
 
-							<div className="title read-article-title">
-								{article().title}
+							<div className="title read-project-title">
+								{project().title}
 							</div>
 
-							<div className="read-article-body">
-								<ArticleStyle>{article().body}</ArticleStyle>
+							<div className="read-project-body">
+								<ArticleStyle>{project().body}</ArticleStyle>
 							</div>
 						</div>
 					</div>

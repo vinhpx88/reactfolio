@@ -15,8 +15,10 @@ const AllProjects = () => {
 						logo={project.logo}
 						title={project.title}
 						description={project.description}
+						stack={project.stack}
 						linkText={project.linkText}
-						link={project.link}
+						// link={project.link}
+						link={"/project/" + (index + 1)}
 					/>
 				</div>
 			))}
