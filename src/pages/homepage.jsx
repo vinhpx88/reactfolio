@@ -90,7 +90,7 @@ const Homepage = () => {
 									{/* With 10+ years of experience, I specialize in Full-Stack Development, building scalable <strong>backend</strong> systems with Node.js, Next.js, and AWS, and crafting modern <strong>frontend</strong> applications using React and Angular. I have hands-on experience across web, <strong>mobile app</strong>, and Windows platforms (WinUI, WPF), real-time communication protocols (Bluetooth LE, Serial, Modbus, WebSocket), and DevOps workflows including Infrastructure as Code and CI/CD. */}
 									With 10+ years of experience, I specialize in Full-Stack Development, with a strong focus on <strong>Backend Engineering</strong> and <strong>Frontend Architecture</strong>. I build scalable backend systems using Node.js, Next.js, and AWS, and craft modern, high-performance frontend applications with React and Angular.
 
-									I have extensive experience delivering solutions across <strong>Web</strong>, <strong>Mobile Applications</strong>, and <strong>Windows Platforms</strong> (WinUI, WPF), working with real-time communication protocols (Bluetooth LE, Serial, Modbus, WebSocket), and implementing reliable <strong>DevOps workflows</strong>, including Infrastructure as Code and CI/CD pipelines.
+									I have extensive experience delivering solutions across <strong>Web</strong>, <strong>Mobile Applications</strong>, and <strong>MacOS, Windows Platforms</strong>, working with real-time communication protocols (Bluetooth LE, Serial, Modbus, WebSocket), and implementing reliable <strong>DevOps workflows</strong>, including Infrastructure as Code and CI/CD pipelines.
 								</p>
 							</div>
 
