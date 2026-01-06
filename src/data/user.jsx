@@ -36,14 +36,24 @@ const INFO = {
 
 	projects: [
 		{
-			title: "xPaaS",
+			title: "Moto Watch",
 			description:
-				"An Internet of Things (IoT) project designed to provide comprehensive management solutions for users, clients, and devices, while also offering advanced data visualization capabilities for the collected device data.",
-			stack: "AWS S3, AWS EC2, AWS Alarm, AWS SNS, Angular, SocketIO, NodeJS.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
-			screenshot: "/eolane-cloud-live.png",
+				"An application that allows users to monitor their watches and receive notifications on their mobile devices.",
+			stack: "vuejs, android native, kotlin, BLE, Firebase.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
+			screenshot: "/moto-watch-live.png",
 			linkText: "View Project",
-			link: "https://admin.e-biossun.com",
+			link: "https://motowatch.com/",
+		},
+		{
+			title: "Floin",
+			description:
+				"A Platform that allows users to manage their crypto assets and track market trends.",
+			stack: "Nuxjs frontend, Nodejs backend, worker, websockets",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
+			screenshot: "/floin.png",
+			linkText: "View Project",
+			link: "https://floin.com",
 		},
 		{
 			title: "Biomotion",
@@ -53,81 +63,72 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
 			screenshot: "/biossun-dashboard.png",
 			linkText: "View Project",
-			link: "https://e-biossun.com",
+			link: "https://biossun.com",
 		},
 		{
-			title: "Eolane Cloud",
+			title: "Yale",
 			description:
-				"This project is built for managing company | user | client | roles & rights.",
-			stack: "ReactJS, Dynamodb, IaC (Sam & Terraform), AWS Cloudformation, AWS S3, AWS Cognito, AWS Userpool.",
+				"A comprehensive solution for clients to monitor and control their smart locks via mobile and web applications.",
+			stack: "shopify, Javascript",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
-			screenshot: "/eolane-cloud-dashboard.png",
+			screenshot: "/yale.png",
 			linkText: "View Project",
-			link: "https://cloud.eolane.com",
+			link: "https://www.yalehome.com/global/en",
 		},
+		// {
+		// 	title: "Diabeloop",
+		// 	description:
+		// 		"The medical project focuses on the critical task of recording and analyzing patients' data.",
+		// 	stack: "Android native, kotlin, BLE multiple connections, BLE data transfer, BLE simulation, AWS S3.",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
+		// 	linkText: "View Project",
+		// 	link: "",
+		// },
+		// {
+		// 	title: "P-ONE",
+		// 	description:
+		// 		"This project for testing purposes, LCDBacklight, UsbProbe, Ethernet Download & Upload.",
+		// 	stack: "android native, kotlin, BLE",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
+		// 	linkText: "View Project",
+		// 	link: "",
+		// },
+		// {
+		// 	title: "Harmony Hub Tool",
+		// 	description:
+		// 		"The IoT project centers around the recording and visualization of data from various devices through a dedicated pixel perfect Desktop application. ",
+		// 	stack: ".Net, WPF, InstallShield, Figma, Material Design, Modbus protocol, serial port communication, Klocwork static analysis. Mitigate the risk of security vulnerabilities",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/csharp/csharp.png",
+		// 	linkText: "View Project",
+		// 	link: "",
+		// },
+		// {
+		// 	title: "F2D",
+		// 	description:
+		// 		"The medical project focuses on the critical task of recording and analyzing patients' data through a dedicated Desktop application. ",
+		// 	stack: ".Net, WinUI, BLE",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/csharp/csharp.png",
+		// 	linkText: "View Project",
+		// 	link: "",
+		// },
+		// {
+		// 	title: "x2M",
+		// 	description:
+		// 		"This project aims to optimize and enhance bus services by implementing a real-time tracking system to monitor and manage bus schedules efficiently.",
+		// 	stack: "Java, DevOps, IaC - AWS Cloudformation, AWS Route53, AWS SNS, AWS SQS, ALARMS, Domains.",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/java/java.png",
+		// 	linkText: "View Project",
+		// 	link: "https://b.eolane-fm.net/",
+		// },
 		{
-			title: "Diabeloop",
-			description:
-				"The medical project focuses on the critical task of recording and analyzing patients' data.",
-			stack: "Android native, kotlin, BLE multiple connections, BLE data transfer, BLE simulation, AWS S3.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
-			linkText: "View Project",
-			link: "",
-		},
-		{
-			title: "Moto Watch",
-			description:
-				"An application that allows users to monitor their watches and receive notifications on their mobile devices.",
-			stack: "android native, kotlin, BLE, Firebase.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
-			screenshot: "/moto-watch-live.png",
-			linkText: "View Project",
-			link: "https://motowatch.com/",
-		},
-		{
-			title: "P-ONE",
-			description:
-				"This project for testing purposes, LCDBacklight, UsbProbe, Ethernet Download & Upload.",
-			stack: "android native, kotlin, BLE",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/kotlin/kotlin.png",
-			linkText: "View Project",
-			link: "",
-		},
-		{
-			title: "Harmony Hub Tool",
-			description:
-				"The IoT project centers around the recording and visualization of data from various devices through a dedicated pixel perfect Desktop application. ",
-			stack: ".Net, WPF, InstallShield, Figma, Material Design, Modbus protocol, serial port communication, Klocwork static analysis. Mitigate the risk of security vulnerabilities",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/csharp/csharp.png",
-			linkText: "View Project",
-			link: "",
-		},
-		{
-			title: "F2D",
-			description:
-				"The medical project focuses on the critical task of recording and analyzing patients' data through a dedicated Desktop application. ",
-			stack: ".Net, WinUI, BLE",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/csharp/csharp.png",
-			linkText: "View Project",
-			link: "",
-		},
-		{
-			title: "x2M",
-			description:
-				"This project aims to optimize and enhance bus services by implementing a real-time tracking system to monitor and manage bus schedules efficiently.",
-			stack: "Java, DevOps, IaC - AWS Cloudformation, AWS Route53, AWS SNS, AWS SQS, ALARMS, Domains.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/java/java.png",
-			linkText: "View Project",
-			link: "https://b.eolane-fm.net/",
-		},
-		{
-			title: "Budget Planner",
+			title: "Etrack",
 			description:
 				"A personal project aims to budgeting for personal user, expense, category, etc...",
 			stack: "Flutter, local database, provider, flutter_localizations, intl",
 			logo: "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png",
+			screenshot: "/etrack.png",
 			linkText: "View Project",
-			link: "https://play.google.com/store/apps/details?id=budget.offline.personal",
+			link: "https://expense.etracking.guru/en",
 		}
 	],
 };

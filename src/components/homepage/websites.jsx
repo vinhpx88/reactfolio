@@ -17,7 +17,7 @@ const Websites = () => {
 	return (
 		<section className="py-8">
 			<h2 className="text-3xl font-bold text-portfolio-primary dark:text-white mb-2 font-secondary">
-				Live Websites
+				Successful web development
 			</h2>
 			<p className="text-portfolio-secondary dark:text-gray-400 mb-8">
 				Production websites I've developed and deployed — click to visit.

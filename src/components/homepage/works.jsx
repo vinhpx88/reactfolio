@@ -6,19 +6,19 @@ const Works = () => {
 	const workExperience = [
 		{
 			image: "/emsa.jpg",
-			title: "Emsa technology",
-			subtitle: "Senior Software Engineer",
-			duration: "2018 - Present",
+			title: "Eolane (France)",
+			subtitle: "Senior Software Engineer (Employed by Emsa Technology, Vietnam)",
+			duration: "2018 – 2024",
 		},
 		{
 			image: "/emsa.jpg",
-			title: "Emsa technology",
-			subtitle: "Software Engineer",
-			duration: "2016 - 2018",
+			title: "Eolane (France)",
+			subtitle: "Software Engineer (Employed by Emsa Technology, Vietnam)",
+			duration: "2016 – 2018",
 		},
 		{
 			image: "/tma.png",
-			title: "TMA Solution",
+			title: "TMA Solution (Vietnam)",
 			subtitle: "Software Engineer",
 			duration: "2015 - 2016",
 		},
