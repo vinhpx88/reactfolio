@@ -1,50 +1,61 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Home, Frown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-import { faFaceSadTear } from "@fortawesome/free-regular-svg-icons";
-
-import NavBar from "../components/common/navBar";
-import Logo from "../components/common/logo";
-
-import INFO from "../data/user";
-
-import "./styles/404.css";
+import NavBar from "@/components/common/navBar";
+import Logo from "@/components/common/logo";
+import INFO from "@/data/user";
 
 const Notfound = () => {
 	useEffect(() => {
-		document.title = `404 | ${INFO.main.title}`;
+		window.scrollTo(0, 0);
 	}, []);
 
 	return (
-		<React.Fragment>
-			<div className="not-found page-content">
+		<>
+			<Helmet>
+				<title>{`404 | ${INFO.main.title}`}</title>
+				<meta name="description" content="Page not found" />
+			</Helmet>
+
+			<div className="min-h-screen bg-background flex flex-col">
 				<NavBar />
-				<div className="content-wrapper">
-					<div className="notfound-logo-container">
-						<div className="projects-logo">
-							<Logo width={46} />
+
+				<main className="flex-1 flex items-center justify-center">
+					<div className="container mx-auto px-4 max-w-5xl">
+						<div className="text-center py-16">
+							<div className="mb-8">
+								<Logo width={80} link={false} />
+							</div>
+							<div className="space-y-4">
+								<h1 className="text-6xl font-bold text-portfolio-primary dark:text-white flex items-center justify-center gap-4">
+									404 <Frown className="h-12 w-12" />
+								</h1>
+								<h2 className="text-2xl font-semibold text-portfolio-secondary dark:text-gray-400">
+									Page Not Found
+								</h2>
+								<p className="text-portfolio-tertiary dark:text-gray-500 max-w-md mx-auto">
+									Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+								</p>
+								<p className="text-sm text-portfolio-tertiary dark:text-gray-500 max-w-md mx-auto break-all">
+									Requested URL: <span className="font-mono">{window.location.pathname}</span>
+								</p>
+							</div>
+							<div className="mt-8">
+								<Button asChild size="lg">
+									<Link to="/" className="gap-2">
+										<Home className="h-5 w-5" />
+										Back to Home
+									</Link>
+								</Button>
+							</div>
 						</div>
 					</div>
-					<div className="notfound-container">
-						<div className="notfound-message">
-							<div className="notfound-title">
-								Oops! <FontAwesomeIcon icon={faFaceSadTear} />
-							</div>
-							<div className="not-found-message">
-								We can't seem to find the page you're looking
-								for.
-								<br />
-								The requested URL "{window.location.href}" was
-								not found on this server.
-							</div>
-							<a href="/" className="not-found-link">
-								Go back to the home page
-							</a>
-						</div>
-					</div>
-				</div>
+				</main>
 			</div>
-		</React.Fragment>
+		</>
 	);
 };
 

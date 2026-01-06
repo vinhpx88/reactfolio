@@ -1,61 +1,59 @@
-import React from "react";
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
-
+import { Briefcase } from "lucide-react";
 import Card from "../common/card";
-
-import "./styles/works.css";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Works = () => {
+	const workExperience = [
+		{
+			image: "/emsa.jpg",
+			title: "Emsa technology",
+			subtitle: "Senior Software Engineer",
+			duration: "2018 - Present",
+		},
+		{
+			image: "/emsa.jpg",
+			title: "Emsa technology",
+			subtitle: "Software Engineer",
+			duration: "2016 - 2018",
+		},
+		{
+			image: "/tma.png",
+			title: "TMA Solution",
+			subtitle: "Software Engineer",
+			duration: "2015 - 2016",
+		},
+	];
+
 	return (
-		<div className="works">
-			<Card
-				icon={faBriefcase}
-				title="Work"
-				body={
-					<div className="works-body">
-						<div className="work">
-							<img
-								src="./emsa.jpg"
-								alt="facebook"
-								className="work-image"
-							/>
-							<div className="work-title">Emsa technology</div>
-							<div className="work-subtitle">
-								Senior Software Engineer
+		<Card
+			icon={<Briefcase className="h-6 w-6" />}
+			title="Work Experience"
+			body={
+				<div className="space-y-6">
+					{workExperience.map((work, index) => (
+						<div key={index} className="flex items-start gap-4">
+							<Avatar className="h-12 w-12">
+								<AvatarImage src={work.image} alt={work.title} />
+								<AvatarFallback className="bg-portfolio-link text-white">
+									{work.title.charAt(0)}
+								</AvatarFallback>
+							</Avatar>
+							<div className="flex-1">
+								<h4 className="font-semibold text-portfolio-primary dark:text-white">
+									{work.title}
+								</h4>
+								<p className="text-sm text-portfolio-secondary dark:text-gray-400">
+									{work.subtitle}
+								</p>
+								<p className="text-xs text-portfolio-tertiary dark:text-gray-500 mt-1">
+									{work.duration}
+								</p>
 							</div>
-							<div className="work-duration">2018 - Present</div>
 						</div>
-
-						<div className="work">
-							<img
-								src="./emsa.jpg"
-								alt="facebook"
-								className="work-image"
-							/>
-							<div className="work-title">Emsa technology</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2016 - 2018</div>
-						</div>
-
-						<div className="work">
-							<img
-								src="./tma.png"
-								alt="twitter"
-								className="work-image"
-							/>
-							<div className="work-title">TMA Solution</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2015 - 2016</div>
-						</div>
-						
-					</div>
-				}
-			/>
-		</div>
+					))}
+				</div>
+			}
+		/>
 	);
 };
 

@@ -1,24 +1,29 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	Card as ShadCard,
+	CardContent,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
 
-import "./styles/card.css";
-
-const Card = (props) => {
-	const { icon, title, body } = props;
+const Card = ({ icon, title, body }) => {
 	return (
-		<div className="card">
-			<div className="card-container">
-				<div className="card-header">
-					<div className="card-icon">
-						<FontAwesomeIcon icon={icon} />
+		<ShadCard className="hover:shadow-lg transition-shadow duration-300">
+			<CardHeader>
+				<div className="flex items-center gap-4">
+					<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-portfolio-link/10 text-portfolio-link">
+						{icon}
 					</div>
-					<div className="card-title">{title}</div>
+					<CardTitle className="text-xl font-semibold text-portfolio-primary dark:text-white">
+						{title}
+					</CardTitle>
 				</div>
-				<div className="card-body">
-					<div className="card-text">{body}</div>
-				</div>
-			</div>
-		</div>
+			</CardHeader>
+			<CardContent>
+				<p className="text-portfolio-secondary dark:text-gray-400 leading-relaxed">
+					{body}
+				</p>
+			</CardContent>
+		</ShadCard>
 	);
 };
 

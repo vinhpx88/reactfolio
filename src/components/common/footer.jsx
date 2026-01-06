@@ -1,36 +1,47 @@
-import React from "react";
 import { Link } from "react-router-dom";
-
-import "./styles/footer.css";
+import { Separator } from "@/components/ui/separator";
+import INFO from "@/data/user";
 
 const Footer = () => {
-	return (
-		<React.Fragment>
-			<div className="footer">
-				<div className="footer-links">
-					<ul className="footer-nav-link-list">
-						<li className="footer-nav-link-item">
-							<Link to="/">Home</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/about">About</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/projects">Projects</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/contact">Contact</Link>
-						</li>
-					</ul>
-				</div>
+	const currentYear = new Date().getFullYear();
 
-				<div className="footer-credits">
-					<div className="footer-credits-text">
-						© 2024 vinhpx.dev. All Rights Reserved.
+	return (
+		<footer className="w-full border-t border-border mt-16">
+			<div className="container mx-auto px-4 py-8 max-w-5xl">
+				<Separator className="mb-6" />
+				<div className="flex flex-col md:flex-row justify-between items-center gap-4">
+					<div className="text-sm text-portfolio-secondary dark:text-gray-400">
+						© {currentYear} {INFO.main.name}. All rights reserved.
 					</div>
+					<nav className="flex gap-6">
+						<Link
+							to="/"
+							className="text-sm text-portfolio-secondary hover:text-portfolio-link dark:text-gray-400 dark:hover:text-portfolio-link transition-colors"
+						>
+							Home
+						</Link>
+						<Link
+							to="/about"
+							className="text-sm text-portfolio-secondary hover:text-portfolio-link dark:text-gray-400 dark:hover:text-portfolio-link transition-colors"
+						>
+							About
+						</Link>
+						<Link
+							to="/projects"
+							className="text-sm text-portfolio-secondary hover:text-portfolio-link dark:text-gray-400 dark:hover:text-portfolio-link transition-colors"
+						>
+							Projects
+						</Link>
+						<Link
+							to="/contact"
+							className="text-sm text-portfolio-secondary hover:text-portfolio-link dark:text-gray-400 dark:hover:text-portfolio-link transition-colors"
+						>
+							Contact
+						</Link>
+					</nav>
 				</div>
 			</div>
-		</React.Fragment>
+		</footer>
 	);
 };
 

@@ -1,20 +1,18 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-import NavBar from "../components/common/navBar";
-import Footer from "../components/common/footer";
-import Logo from "../components/common/logo";
+import NavBar from "@/components/common/navBar";
+import Footer from "@/components/common/footer";
+import Logo from "@/components/common/logo";
 
-import INFO from "../data/user";
-import myProjects from "../data/projects";
+import INFO from "@/data/user";
+import myProjects from "@/data/projects";
 
-import "./styles/readProject.css";
-
-let ArticleStyle = styled.div``;
-
-const ReadArticle = () => {
+const ReadProject = () => {
 	const navigate = useNavigate();
 	let { slug } = useParams();
 
@@ -24,61 +22,66 @@ const ReadArticle = () => {
 		window.scrollTo(0, 0);
 	}, [project]);
 
-	ArticleStyle = styled.div`
-		${project().style}
-	`;
+	if (!project) {
+		return null;
+	}
+
+	const projectData = project();
 
 	return (
-		<React.Fragment>
+		<>
 			<Helmet>
-				<title>{`${project().title} | ${INFO.main.title}`}</title>
-				<meta name="description" content={project().description} />
-				<meta name="keywords" content={project().keywords.join(", ")} />
+				<title>{`${projectData.title} | ${INFO.main.title}`}</title>
+				<meta name="description" content={projectData.description} />
+				<meta name="keywords" content={projectData.keywords.join(", ")} />
 			</Helmet>
 
-			<div className="page-content">
+			{/* Inject custom project styles if they exist */}
+			{projectData.style && (
+				<style dangerouslySetInnerHTML={{ __html: projectData.style }} />
+			)}
+
+			<div className="min-h-screen bg-background">
 				<NavBar />
 
-				<div className="content-wrapper">
-					<div className="read-project-logo-container">
-						<div className="read-project-logo">
-							<Logo width={46} />
-						</div>
+				<main className="container mx-auto px-4 max-w-4xl py-16">
+					<div className="mb-8">
+						<Logo width={46} />
 					</div>
 
-					<div className="read-project-container">
-						<div className="read-project-back">
-							<img
-								src="../back-button.png"
-								alt="back"
-								className="read-project-back-button"
-								onClick={() => navigate(-1)}
-							/>
+					{/* Back Button */}
+					<div className="mb-6">
+						<Button
+							variant="ghost"
+							onClick={() => navigate(-1)}
+							className="gap-2"
+						>
+							<ArrowLeft className="h-4 w-4" />
+							Back
+						</Button>
+					</div>
+
+					{/* Project Content */}
+					<article className="space-y-6">
+						<div>
+							<Badge variant="outline" className="mb-4">
+								{projectData.date}
+							</Badge>
+							<h1 className="text-4xl font-bold text-portfolio-primary dark:text-white font-secondary">
+								{projectData.title}
+							</h1>
 						</div>
 
-						<div className="read-project-wrapper">
-							<div className="read-project-date-container">
-								<div className="read-project-date">
-									{project().date}
-								</div>
-							</div>
-
-							<div className="title read-project-title">
-								{project().title}
-							</div>
-
-							<div className="read-project-body">
-								<ArticleStyle>{project().body}</ArticleStyle>
-							</div>
+						<div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-portfolio-primary dark:prose-headings:text-white prose-a:text-portfolio-link prose-strong:text-portfolio-primary dark:prose-strong:text-white">
+							{projectData.body}
 						</div>
-					</div>
-					<div className="page-footer">
-						<Footer />
-					</div>
-				</div>
+					</article>
+				</main>
+
+				<Footer />
 			</div>
-		</React.Fragment>
+		</>
 	);
 };
 
-export default ReadArticle;
+export default ReadProject;

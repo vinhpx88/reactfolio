@@ -1,62 +1,62 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-	faGithub,
-	faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-
-import INFO from "../../data/user";
-
-import "./styles/socials.css";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import INFO from "@/data/user";
 
 const Socials = () => {
+	const socials = [
+		{
+			name: "GitHub",
+			url: INFO.socials.github,
+			icon: Github,
+			label: "Follow on GitHub",
+		},
+		{
+			name: "LinkedIn",
+			url: INFO.socials.linkedin,
+			icon: Linkedin,
+			label: "Follow on LinkedIn",
+		},
+		{
+			name: "Email",
+			url: `mailto:${INFO.main.email}`,
+			icon: Mail,
+			label: INFO.main.email,
+		},
+	];
+
 	return (
-		<div className="socials">
-			<div className="social">
-				<a href={INFO.socials.github} target="_blank" rel="noreferrer">
-					<div className="social-icon">
-						<FontAwesomeIcon
-							icon={faGithub}
-							className="social-icon"
-						/>
-					</div>
-					<div className="social-text">Follow on GitHub</div>
-				</a>
+		<TooltipProvider>
+			<div className="flex flex-wrap gap-3">
+				{socials.map((social) => {
+					const Icon = social.icon;
+					return (
+						<Tooltip key={social.name}>
+							<TooltipTrigger asChild>
+								<Button
+									variant="outline"
+									size="icon"
+									asChild
+									className="hover:bg-portfolio-link hover:text-white hover:border-portfolio-link transition-all"
+								>
+									<a
+										href={social.url}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Icon className="h-5 w-5" />
+										<span className="sr-only">{social.label}</span>
+									</a>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>{social.label}</p>
+							</TooltipContent>
+						</Tooltip>
+					);
+				})}
 			</div>
-
-			<div className="social">
-				<a
-					href={INFO.socials.linkedin}
-					target="_blank"
-					rel="noreferrer"
-				>
-					<div className="social-icon">
-						<FontAwesomeIcon
-							icon={faLinkedin}
-							className="social-icon"
-						/>
-					</div>
-					<div className="social-text">Follow on LinkedIn</div>
-				</a>
-			</div>
-
-			<div className="email">
-				<div className="email-wrapper">
-					<a
-						href={`mailto:${INFO.main.email}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<div className="social-icon">
-							<FontAwesomeIcon icon={faEnvelope} />
-						</div>
-
-						<div className="social-text">{INFO.main.email}</div>
-					</a>
-				</div>
-			</div>
-		</div>
+		</TooltipProvider>
 	);
 };
 

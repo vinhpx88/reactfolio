@@ -1,26 +1,20 @@
-import React from "react";
-
 import Project from "./project";
-
-import INFO from "../../data/user";
-
-import "./styles/allProjects.css";
+import INFO from "@/data/user";
 
 const AllProjects = () => {
 	return (
-		<div className="all-projects-container">
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{INFO.projects.map((project, index) => (
-				<div className="all-projects-project" key={index}>
-					<Project
-						logo={project.logo}
-						title={project.title}
-						description={project.description}
-						stack={project.stack}
-						linkText={project.linkText}
-						// link={project.link}
-						link={"/project/" + (index + 1)}
-					/>
-				</div>
+				<Project
+					key={index}
+					logo={project.logo}
+					screenshot={project.screenshot}
+					title={project.title}
+					description={project.description}
+					stack={project.stack}
+					linkText={project.linkText}
+					link={`/project/${index + 1}`}
+				/>
 			))}
 		</div>
 	);
