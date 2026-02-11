@@ -45,16 +45,16 @@ const INFO = {
 			linkText: "View Project",
 			link: "https://motowatch.com/",
 		},
-		{
-			title: "Floin",
-			description:
-				"A Platform that allows users to manage their crypto assets and track market trends.",
-			stack: "Nuxjs frontend, Nodejs backend, worker, websockets",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
-			screenshot: "/floin.png",
-			linkText: "View Project",
-			link: "https://floin.com",
-		},
+		// {
+		// 	title: "Floin",
+		// 	description:
+		// 		"A Platform that allows users to manage their crypto assets and track market trends.",
+		// 	stack: "Nuxjs frontend, Nodejs backend, worker, websockets",
+		// 	logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/typescript/typescript.png",
+		// 	screenshot: "/floin.png",
+		// 	linkText: "View Project",
+		// 	link: "https://floin.com",
+		// },
 		{
 			title: "Biomotion",
 			description:
