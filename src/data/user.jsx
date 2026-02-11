@@ -121,10 +121,10 @@ const INFO = {
 		// 	link: "https://b.eolane-fm.net/",
 		// },
 		{
-			title: "Etrack",
+			title: "Expense Tracker",
 			description:
-				"A personal project aims to budgeting for personal user, expense, category, etc...",
-			stack: "Flutter, local database, provider, flutter_localizations, intl",
+				"A personal project aims to budgeting for personal user, expense, category, etc... with AI integration for expense analysis and insights.",
+			stack: "Nextjs, Flutter, Supabase OpenAPI API, local database, flutter_localizations, i18n",
 			logo: "https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png",
 			screenshot: "/etrack.png",
 			linkText: "View Project",
